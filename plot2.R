@@ -26,9 +26,8 @@ HPConsumptionSub <- subset(HPConsumption, Date=="2007-2-1" | Date=="2007-2-2")
 HPConsumptionSub$DateTime<-ymd_hms(paste(HPConsumptionSub$Date, HPConsumptionSub$Time, " "),
                                    tz=Sys.timezone())
 
+# Produce the plot and save as plot2.png
 plot(HPConsumptionSub$Global_active_power~HPConsumptionSub$DateTime, type="l" ,
      ylab="Global Active Power (kilowatts)", xlab="")
-
-# Produce the histogram and save as plot2.png
 dev.copy(png, file = "plot2.png")
 dev.off()
