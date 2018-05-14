@@ -25,7 +25,7 @@ HPConsumption$Date <- dmy(HPConsumption$Date)
 HPConsumptionSub <- subset(HPConsumption, Date=="2007-2-1" | Date=="2007-2-2")
 HPConsumptionSub$DateTime<-ymd_hms(paste(HPConsumptionSub$Date, HPConsumptionSub$Time, " "),
                                    tz=Sys.timezone())
-
+# Create a layout for 4 plots with 2 per row.  Then produce the four plots and save to plot4.png
 par(mfrow = c(2, 2))
 plot(HPConsumptionSub$Global_active_power~HPConsumptionSub$DateTime, type="l" ,
      ylab="Global Active Power", xlab="")
