@@ -26,7 +26,7 @@ HPConsumptionSub <- subset(HPConsumption, Date=="2007-2-1" | Date=="2007-2-2")
 HPConsumptionSub$DateTime<-ymd_hms(paste(HPConsumptionSub$Date, HPConsumptionSub$Time, " "),
                                    tz=Sys.timezone())
 
-# Produce the histogram and save as plot1.png
+# Produce the plot and save as plot3.png
 
 plot(HPConsumptionSub$DateTime, as.numeric(HPConsumptionSub$Sub_metering_1), type = "l", xlab="", 
      ylab="Energy sub metering")
